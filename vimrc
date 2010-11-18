@@ -30,7 +30,6 @@ set numberwidth=5 " We are good up to 99999 lines
 set showcmd " show the command being typed
 
 
-set completeopt= " don't use a pop up menu for completions
 set expandtab " no real tabs please!
 set formatoptions=rq " Automatically insert comment leader on return, and let gq format comments
 set ignorecase " case insensitive by default
@@ -43,4 +42,5 @@ set softtabstop=4 " when hitting tab or backspace, how many spaces
 "should a tab be (see expandtab)
 set tabstop=8 " real tabs should be 8, and they will show with set list on
 
-
+filetype plugin on
+set ofu=syntaxcomplete#Complete
