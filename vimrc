@@ -31,6 +31,7 @@ set showcmd " show the command being typed
 
 
 set expandtab " no real tabs please!
+set smartindent
 set formatoptions=rq " Automatically insert comment leader on return, and let gq format comments
 set ignorecase " case insensitive by default
 set infercase " case inferred by default
