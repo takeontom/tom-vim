@@ -4,7 +4,6 @@
 "
 " comments taken from http://www.vi-improved.org/vimrc.php
 
-colorscheme zellner
 
 set background=dark "using a dark background
 syntax on "syntax highlighting
@@ -46,3 +45,9 @@ set nofoldenable "really hate code-folding...
 
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+
+set t_Co=256
+"colorscheme lucius
+colorscheme jellybeans
+"colorscheme zenburn
+
