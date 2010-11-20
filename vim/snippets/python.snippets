@@ -35,7 +35,8 @@ snippet deff
 # New Method
 snippet defs
 	def ${1:mname}(self, ${2:arg}):
-		${3:pass}
+		"""${3:docstring for $1}"""
+		${4:pass}
 # New Property
 snippet property
 	def ${1:foo}():

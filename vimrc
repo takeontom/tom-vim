@@ -48,6 +48,6 @@ set ofu=syntaxcomplete#Complete
 
 set t_Co=256
 "colorscheme lucius
-colorscheme jellybeans
+"colorscheme jellybeans
 "colorscheme zenburn
-
+colorscheme tom_jellybeans
