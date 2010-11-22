@@ -4,7 +4,6 @@
 "
 " comments taken from http://www.vi-improved.org/vimrc.php
 
-colorscheme slate
 
 set background=dark "using a dark background
 syntax on "syntax highlighting
@@ -22,7 +21,7 @@ set showmatch " show matching brackets
 set matchtime=5 " how many tenths of a second to blink matching brackets for
 
 set list " we do what to show tabs, to ensure we get them out of my files
-set listchars=tab:>-,trail:- " show tabs and trailing 
+set listchars=tab:>-,trail:~ " show tabs and trailing 
 
 set number " turn on line numbers
 set numberwidth=5 " We are good up to 99999 lines
@@ -42,6 +41,25 @@ set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like 
 set softtabstop=4 " when hitting tab or backspace, how many spaces 
 "should a tab be (see expandtab)
 set tabstop=8 " real tabs should be 8, and they will show with set list on
+set nofoldenable "really hate code-folding...
 
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+
+set t_Co=256
+"colorscheme lucius
+"colorscheme jellybeans
+"colorscheme zenburn
+colorscheme tom_jellybeans
+
+function! ReloadSnippets( snippets_dir, ft )
+    if strlen( a:ft ) == 0
+    let filetype = "_"
+    else
+    let filetype = a:ft
+    endif
+
+    call ResetSnippets()
+    call GetSnippets( a:snippets_dir, filetype )
+endfunction
+
