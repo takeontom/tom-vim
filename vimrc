@@ -7,11 +7,12 @@
 set nocompatible " Use vim features - ignore vi compatibility
 set wildmode=longest,list " At command line, complete longest common string, then list alternatives.
 
-
+set history=999
 
 set background=dark "using a dark background
 syntax on "syntax highlighting
 
+set autoread
 set backup " make backup files
 set backupdir=~/.vim/backup " where to put backup files
 set directory=~/.vim/tmp " directory to place swap files in
@@ -82,5 +83,5 @@ endif
 
 " This beauty remembers where you were the last time you edited the
 " file, and returns to the same position.
-au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+"au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
