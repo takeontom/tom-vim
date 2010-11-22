@@ -57,6 +57,7 @@ set t_Co=256
 "colorscheme zenburn
 colorscheme tom_jellybeans
 
+" Reloads all the code snippets
 function! ReloadSnippets( snippets_dir, ft )
     if strlen( a:ft ) == 0
     let filetype = "_"
@@ -67,6 +68,11 @@ function! ReloadSnippets( snippets_dir, ft )
     call ResetSnippets()
     call GetSnippets( a:snippets_dir, filetype )
 endfunction
+
+" Toggle the taglist window
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+
 
 " load file type specific configs
 if !exists("autocommands_loaded")
