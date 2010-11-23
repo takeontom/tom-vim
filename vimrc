@@ -46,7 +46,7 @@ set smartcase " if there are caps, go case-sensitive
 set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
 set softtabstop=4 " when hitting tab or backspace, how many spaces 
 "should a tab be (see expandtab)
-set tabstop=8 " real tabs should be 8, and they will show with set list on
+set tabstop=4 " real tabs should be 8, and they will show with set list on
 set nofoldenable "really hate code-folding...
 
 filetype plugin on
@@ -84,4 +84,11 @@ endif
 " This beauty remembers where you were the last time you edited the
 " file, and returns to the same position.
 "au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+" Fix bad whitespace
+function! FixBadWhiteSpace()
+    retab
+    %s/\s*$//
+    ''
+:endfunction
 
