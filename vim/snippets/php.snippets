@@ -134,6 +134,9 @@ snippet doc_i
 	interface ${1:}
 	{${5}
 	} // END interface $1
+# PHPDoc return
+snippet pdr
+	@return ${1}${2: }
 # class ...
 snippet class
 	/**
@@ -216,3 +219,10 @@ snippet fun
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet ptc_php
+	<?php
+	/**
+	 * @copyright Copyright (c) 2010, Protec Innovations Ltd
+	 * @package ${1:package}
+	 * @package ${2:subpackage}
+	 */
