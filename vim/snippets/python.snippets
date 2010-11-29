@@ -10,6 +10,8 @@ snippet docs
 	Author: ${2:`g:snips_author`}
 	Description: ${3}
 	'''
+snippet '''
+	'''${1}'''
 snippet wh
 	while ${1:condition}:
 		${2:# code...}
@@ -17,16 +19,16 @@ snippet for
 	for ${1:needle} in ${2:haystack}:
 		${3:# code...}
 # New Class
-snippet cl
+snippet cls
 	class ${1:ClassName}(${2:object}):
-		"""${3:docstring for $1}"""
+		'''${3:docstring for $1}'''
 		def __init__(self):
-			${5:super($1, self).__init__()}
-			${6}
+			${4:super($1, self).__init__()}
+			${5}
 # New Function
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		"""${3:docstring for $1}"""
+		'''${3:docstring for $1}'''
 		${4:pass}
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
@@ -34,7 +36,7 @@ snippet deff
 # New Method
 snippet defs
 	def ${1:mname}(self, ${2:arg}):
-		"""${3:docstring for $1}"""
+		'''${3:docstring for $1}'''
 		${4:pass}
 # New Property
 snippet property
