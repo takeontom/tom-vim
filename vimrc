@@ -52,6 +52,9 @@ set nofoldenable "really hate code-folding...
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
+" search for tags in the current directory, then work up if no match found
+set tags=./tags;/
+
 set t_Co=256
 "colorscheme lucius
 "colorscheme jellybeans
