@@ -48,7 +48,7 @@ set softtabstop=4 " when hitting tab or backspace, how many spaces
 "should a tab be (see expandtab)
 set tabstop=4 " real tabs should be 8, and they will show with set list on
 set nofoldenable "really hate code-folding...
-set textwidth=78 "when to start auto-wrapping
+set textwidth=70 "when to start auto-wrapping
 set autoindent
 
 filetype plugin on
