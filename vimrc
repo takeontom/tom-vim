@@ -37,7 +37,7 @@ set showcmd " show the command being typed
 
 set expandtab " no real tabs please!
 set smartindent
-set formatoptions=orq " Automatically insert comment leader on return, and let gq format comments
+set formatoptions=corq " Automatically insert comment leader on return, and let gq format comments
 set ignorecase " case insensitive by default
 set infercase " case inferred by default
 set nowrap " do not wrap line
@@ -48,6 +48,8 @@ set softtabstop=4 " when hitting tab or backspace, how many spaces
 "should a tab be (see expandtab)
 set tabstop=4 " real tabs should be 8, and they will show with set list on
 set nofoldenable "really hate code-folding...
+set textwidth=78 "when to start auto-wrapping
+set autoindent
 
 filetype plugin on
 set ofu=syntaxcomplete#Complete
@@ -77,11 +79,12 @@ endfunction
 nnoremap <silent> <F8> :TlistToggle<CR>
 
 
-
 " load file type specific configs
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
+
+    autocmd FileType gitcommit set formatoptions=tcroqa tw=70
 endif
 
 " This beauty remembers where you were the last time you edited the
