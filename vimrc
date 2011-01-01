@@ -83,6 +83,7 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
+    autocmd BufRead *.py inoremap # X<c-h>#
 
     autocmd FileType gitcommit set formatoptions=tcroqa tw=70
 endif
