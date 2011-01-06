@@ -86,6 +86,7 @@ if !exists("autocommands_loaded")
     autocmd BufRead *.py inoremap # X<c-h>#
 
     autocmd FileType gitcommit set formatoptions=tcroqa tw=70
+    autocmd FileType yaml set sts=2 sw=2
 endif
 
 " This beauty remembers where you were the last time you edited the
@@ -99,3 +100,5 @@ function! FixBadWhiteSpace()
     ''
 :endfunction
 
+" Don't really want any limit to the number of files CommandT shows...
+let g:CommandTMaxFiles=999999
