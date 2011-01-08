@@ -23,7 +23,7 @@ inoremap <Nul> <C-x><C-o>
 autocmd filetype python source ~/.vim/pydoc.vim
 
 " Wrap at 72 chars for comments.
-set formatoptions=tcroqa textwidth=72 foldignore= wildignore+=*.py[co]
+set formatoptions=tcroq textwidth=72 foldignore= wildignore+=*.py[co]
 
 " Highlight end of line whitespace.
 "highlight WhitespaceEOL ctermbg=red guibg=red
