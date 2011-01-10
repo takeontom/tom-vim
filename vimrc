@@ -86,6 +86,7 @@ if !exists("autocommands_loaded")
     autocmd BufRead *.py inoremap # X<c-h>#
 
     autocmd FileType gitcommit set formatoptions=tcroqa tw=70
+    autocmd FileType php set sts=4 sw=4
     autocmd FileType yaml set sts=2 sw=2
 endif
 
