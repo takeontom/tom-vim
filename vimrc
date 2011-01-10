@@ -85,6 +85,8 @@ if !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
     autocmd BufRead *.py inoremap # X<c-h>#
 
+    autocmd FileType python source ~/.vim/python.vim
+    autocmd FileType python inoremap # X<c-h>#
     autocmd FileType gitcommit set formatoptions=tcroqa tw=70
     autocmd FileType php set sts=4 sw=4
     autocmd FileType yaml set sts=2 sw=2
