@@ -140,15 +140,10 @@ snippet pdr
 # class ...
 snippet class
 	/**
-	 * ${1}
+	 * ${2}
 	 **/
-	class ${2:ClassName}
-	{
+	class ${1:ClassName} {
 		${3}
-		function ${4:__construct}(${5:argument})
-		{
-			${6:}
-		}
 	}
 # define(...)
 snippet def
@@ -226,5 +221,53 @@ snippet ptc_php
 	 * @package ${1:package}
 	 * @package ${2:subpackage}
 	 */
+	${3:}
 snippet ptc_dbg
 	Protec_Log::logDebug(${1:message});
+
+snippet tcls
+	<?php
+	/**
+	* @copyright Copyright (c) 2010, Protec Innovations Ltd
+	* @package ${1:Package}
+	* @subpackage Test
+	*/
+
+	class ${2:ClassName}_Test extends PHPUnit_Framework_TestCase {
+		/**
+		*
+		* @var $2
+		*/
+		private $_subject;
+
+		public function setUp() {
+			$this->_subject = new $2();
+		}
+
+		public function tearDown() {
+			$this->subject = null;
+		}
+
+		${3:}
+	}
+
+snippet tadder
+	public function testAdd${1:property}() {
+		$numFieldData = 5;
+		$added = array();
+		for($i = 0; $i < $numFieldData; $i++)   {
+			$newModel = $this->getMock('${2:modelToAdd}');
+			$this->_subject->add$1($newModel);
+			$added[] = $newModel;
+		}
+		$allNewModels = $this->_subject->get$1${3:s}();
+		foreach($allNewModels as $aNewModel) {
+			$this->assertContains($aNewModel, $added);
+		}
+	}
+
+	public function testGet$1$3() {
+		//the add$1 test is sufficient
+		$this->testAdd$1();
+	}
+	${4:}
