@@ -91,6 +91,9 @@ if !exists("autocommands_loaded")
     autocmd FileType yaml set sts=2 sw=2
 endif
 
+" arduino styling
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+
 " This beauty remembers where you were the last time you edited the
 " file, and returns to the same position.
 "au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
