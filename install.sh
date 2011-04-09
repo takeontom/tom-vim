@@ -19,7 +19,8 @@ ln -s $sDir/vimrc ~/.vimrc
 
 echo "vim config installed. huzzah!"
 
-cd lib/command-t
+oldDir=$(pwd)
+cd $sDir/lib/command-t
 ./install-commant-t.sh
-cd ../../
+cd $oldDir
 
