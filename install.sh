@@ -1,4 +1,7 @@
 #!/bin/bash
+
+sudo apt-get install vim-gnome
+
 sDir=$(cd $(dirname "$0"); pwd)
 echo "script found at:" $sDir
 
@@ -15,4 +18,8 @@ ln -s $sDir/vim ~/.vim
 ln -s $sDir/vimrc ~/.vimrc
 
 echo "vim config installed. huzzah!"
+
+cd lib/command-t
+./install-commant-t.sh
+cd ../../
 
