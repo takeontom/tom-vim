@@ -133,3 +133,11 @@ endfunction
 autocmd BufWritePre * call SetIsNewFile()
 autocmd BufWritePost * call FlushCommandTOnNewFileSave()
 
+
+" ----------------------------------------------------------
+" FuzzyFinder
+" ----------------------------------------------------------
+nmap <Leader>ft :FufTag<CR>
+nmap <Leader>ff :FufFile<CR>
+nmap <Leader>fb :FufBuffer<CR>
+
