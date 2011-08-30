@@ -26,7 +26,7 @@ set showmatch " show matching brackets
 set matchtime=2 " how many tenths of a second to blink matching brackets for
 
 set list " we do what to show tabs, to ensure we get them out of my files
-set listchars=tab:>-,trail:~ " show tabs and trailing 
+set listchars=tab:>-,trail:~ " show tabs and trailing
 
 set number " turn on line numbers
 set numberwidth=5 " We are good up to 99999 lines
@@ -44,7 +44,7 @@ set nowrap " do not wrap line
 set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
 set smartcase " if there are caps, go case-sensitive
 set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
-set softtabstop=4 " when hitting tab or backspace, how many spaces 
+set softtabstop=4 " when hitting tab or backspace, how many spaces
 "should a tab be (see expandtab)
 set tabstop=4 " real tabs should be 8, and they will show with set list on
 set nofoldenable "really hate code-folding...
@@ -55,7 +55,7 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 " search for tags in the current directory, then work up if no match found
-set tags=./tags;/
+"set tags=./tags;/
 
 set t_Co=256
 "colorscheme lucius
@@ -91,6 +91,13 @@ if !exists("autocommands_loaded")
     autocmd FileType php set sts=4 sw=4
     autocmd FileType yaml set sts=2 sw=2
 endif
+
+filetype plugin on
+au FileType php set omnifunc=phpcomplete#CompletePHP
+" You might also find this useful
+" PHP Generated Code Highlights (HTML & SQL)
+let php_sql_query=1
+let php_htmlInStrings=1
 
 " arduino styling
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
