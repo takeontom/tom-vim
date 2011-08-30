@@ -92,7 +92,7 @@ if !exists("autocommands_loaded")
     autocmd FileType yaml set sts=2 sw=2
 endif
 
-filetype plugin on
+" php
 au FileType php set omnifunc=phpcomplete#CompletePHP
 " You might also find this useful
 " PHP Generated Code Highlights (HTML & SQL)
@@ -115,3 +115,21 @@ function! FixBadWhiteSpace()
 
 " Don't really want any limit to the number of files CommandT shows...
 let g:CommandTMaxFiles=999999
+
+" Flush the CommandT buffer when saving new files
+let g:isNewFile = 0
+function! SetIsNewFile()
+    if ! filereadable(expand("<afile>:p"))
+        let g:isNewFile = 1
+    else
+        let g:isNewFile = 0
+    endif
+endfunction
+function! FlushCommandTOnNewFileSave()
+    if g:isNewFile == 1
+        CommandTFlush
+    endif
+endfunction
+autocmd BufWritePre * call SetIsNewFile()
+autocmd BufWritePost * call FlushCommandTOnNewFileSave()
+
