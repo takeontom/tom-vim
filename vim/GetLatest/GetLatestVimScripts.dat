@@ -1,0 +1,14 @@
+ScriptID SourceID Filename
+--------------------------
+294 10110 :AutoInstall: Align.vim
+302 14498 :AutoInstall: AnsiEsc.vim
+104 3201 :AutoInstall: blockhl.vim 
+120 9388 :AutoInstall: decho.vim
+40 8798 :AutoInstall: DrawIt.tar.gz
+642 15781 :AutoInstall: GetLatestVimScripts.vim
+489 14117 :AutoInstall: Manpageview.vim
+508 9865 :AutoInstall: ZoomWin.vim
+1984 13961 :AutoInstall: FuzzyFinder
+2975 15542 :AutoInstall: fugitive.vim
+3252 13948 :AutoInstall: L9
+2981 14850 :AutoInstall: zencoding.vim
