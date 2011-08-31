@@ -141,3 +141,10 @@ nmap <Leader>ft :FufTag<CR>
 nmap <Leader>ff :FufFile<CR>
 nmap <Leader>fb :FufBuffer<CR>
 
+
+" ----------------------------------------------------------
+" Insert Bindings
+" ----------------------------------------------------------
+
+" insert the name (without path) of the current file
+inoremap <leader>if <C-R>=expand("%:t")<CR>
