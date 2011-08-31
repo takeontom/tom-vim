@@ -24,3 +24,5 @@ cd $sDir/lib/command-t
 ./install-commant-t.sh
 cd $oldDir
 
+echo "installing links to get php help..."
+sudo apt-get install links
