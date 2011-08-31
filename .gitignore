@@ -7,3 +7,4 @@ vim/ruby/command-t/*.o
 vim/ruby/command-t/*.log
 vim/ruby/command-t/Makefile
 vim/ruby/command-t/ext.so
+vim/GetLatest/Installed/*
