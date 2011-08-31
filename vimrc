@@ -66,17 +66,17 @@ set smartcase             " if there are caps, go case-sensitive
 " Editing
 " ------------------------------------------------------------------------------
 
-set showmatch             " show matching brackets
-set matchtime=2           " how many tenths of a second to blink matching brackets for
-set list                  " we do what to show tabs, to ensure we get them out of my files
+set showmatch                " show matching brackets
+set matchtime=2              " how many tenths of a second to blink matching brackets for
+set list                     " we do what to show tabs, to ensure we get them out of my files
 set listchars=tab:>-,trail:~ " show tabs and trailing
 
-set number                " turn on line numbers
-set numberwidth=4         " We are good up to 99999 lines
-set scrolloff=3           " Give 3 lines of context when at bottom of window
+set number                   " turn on line numbers
+set numberwidth=4            " We are good up to 99999 lines
+set scrolloff=3              " Give 3 lines of context when at bottom of window
 
-set nowrap                " do not wrap line
-set nofoldenable          " really hate code-folding...
+set nowrap                   " do not wrap line
+set nofoldenable             " really hate code-folding...
 
 
 
