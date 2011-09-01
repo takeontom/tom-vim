@@ -172,12 +172,6 @@ if !exists("autocommands_loaded")
     autocmd FileType python source ~/.vim/python.vim
     autocmd FileType python inoremap # X<c-h>#
 
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType php set sts=4 sw=4
-    " You might also find this useful
-    " PHP Generated Code Highlights (HTML & SQL)
-    let php_sql_query=1
-    let php_htmlInStrings=1
 
     autocmd FileType yaml set sts=2 sw=2
 

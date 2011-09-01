@@ -123,6 +123,9 @@ Filename()	snipMate.txt	/*Filename()*
 GetLatestVimScripts	pi_getscript.txt	/*GetLatestVimScripts*
 GetLatestVimScripts-copyright	pi_getscript.txt	/*GetLatestVimScripts-copyright*
 GetLatestVimScripts_dat	pi_getscript.txt	/*GetLatestVimScripts_dat*
+ReloadAllSnippets()	snipMate.txt	/*ReloadAllSnippets()*
+ReloadSnippets()	snipMate.txt	/*ReloadSnippets()*
+ResetAllSnippets()	snipMate.txt	/*ResetAllSnippets()*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
 Tlist_Get_Tag_Prototype_By_Line()	taglist.txt	/*Tlist_Get_Tag_Prototype_By_Line()*
 Tlist_Get_Tagname_By_Line()	taglist.txt	/*Tlist_Get_Tagname_By_Line()*
@@ -568,6 +571,7 @@ snipMate-expandtab	snipMate.txt	/*snipMate-expandtab*
 snipMate-features	snipMate.txt	/*snipMate-features*
 snipMate-filename	snipMate.txt	/*snipMate-filename*
 snipMate-indenting	snipMate.txt	/*snipMate-indenting*
+snipMate-license	snipMate.txt	/*snipMate-license*
 snipMate-placeholders	snipMate.txt	/*snipMate-placeholders*
 snipMate-remap	snipMate.txt	/*snipMate-remap*
 snipMate-settings	snipMate.txt	/*snipMate-settings*
