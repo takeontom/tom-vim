@@ -53,20 +53,20 @@ snippet p4start
 	usage_and_exit()
 	{
 		usage
-		exit $1
+		exit $${6:1}
 	}
 	
 	# change to the current dir
 	set_path()
 	{
-		thisDir=$(cd $(dirname "$0"); pwd)
+		thisDir=$(cd $(dirname "$${5:0}"); pwd)
 		cd $thisDir
 		cd ./
 	}
 	
 	set_path
 	
-	PROGRAM=\`basename $0\`
+	PROGRAM=\`basename $${5:0}\`
 	MYPATH=\`readlink -f ./\`
 	P4PATH=\`readlink -f ../../\`
 	LIBPATH=$P4PATH"/library"
