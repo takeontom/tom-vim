@@ -211,6 +211,7 @@ function! FixBadWhiteSpace()
 let g:GetLatestVimScripts_allowautoinstall=1
 
 
+
 " ------------------------------------------------------------------------------
 " CommandT
 " ------------------------------------------------------------------------------
@@ -244,6 +245,18 @@ autocmd BufWritePost * call FlushCommandTOnNewFileSave()
 nmap <Leader>ft :FufTag<CR>
 nmap <Leader>ff :FufFile<CR>
 nmap <Leader>fb :FufBuffer<CR>
+
+
+
+" ------------------------------------------------------------------------------
+" Fugitive (git plugin)
+" ------------------------------------------------------------------------------
+
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gb :Gblame<CR>
+nmap <Leader>gh :Gbrowse<CR>
+nmap <Leader>gd :Gdiff<CR>
+nmap <Leader>gf :Gvsplit<CR>
 
 
 
