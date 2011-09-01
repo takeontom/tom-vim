@@ -26,3 +26,50 @@ snippet case
 		${2:pattern})
 			${3};;
 	esac
+snippet p4start
+	#!/bin/bash
+	
+	# ${3:description}
+	#
+	# Usage:
+	#       ${1:script} ${2:usage}
+	
+	usage()
+	{
+		echo "Usage: $PROGRAM $2"
+	}
+	
+	error()
+	{
+		echo "$@" 1>&2
+		usage_and_exit 1
+	}
+
+	warning()
+	{
+		echo "$@" 1>&2
+	}
+	
+	usage_and_exit()
+	{
+		usage
+		exit $1
+	}
+	
+	# change to the current dir
+	set_path()
+	{
+		thisDir=$(cd $(dirname "$0"); pwd)
+		cd $thisDir
+		cd ./
+	}
+	
+	set_path
+	
+	PROGRAM=\`basename $0\`
+	MYPATH=\`readlink -f ./\`
+	P4PATH=\`readlink -f ../../\`
+	LIBPATH=$P4PATH"/library"
+	REPORTSPATH=$P4PATH"/data/reports"
+	
+	${4}
