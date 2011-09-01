@@ -171,7 +171,6 @@ if !exists("autocommands_loaded")
 
     autocmd FileType python source ~/.vim/python.vim
     autocmd FileType python inoremap # X<c-h>#
-    autocmd FileType gitcommit set formatoptions=tcroqa tw=70
 
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType php set sts=4 sw=4
