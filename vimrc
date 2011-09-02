@@ -166,21 +166,6 @@ endfunction
 
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
-    autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
-    autocmd BufRead *.py inoremap # X<c-h>#
-
-    autocmd FileType python source ~/.vim/python.vim
-    autocmd FileType python inoremap # X<c-h>#
-    autocmd FileType gitcommit set formatoptions=tcroqa tw=70
-
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType php set sts=4 sw=4
-    " You might also find this useful
-    " PHP Generated Code Highlights (HTML & SQL)
-    let php_sql_query=1
-    let php_htmlInStrings=1
-
-    autocmd FileType yaml set sts=2 sw=2
 
     " arduino styling
     autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
