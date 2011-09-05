@@ -12,3 +12,4 @@ ScriptID SourceID Filename
 2975 15542 :AutoInstall: fugitive.vim
 3252 13948 :AutoInstall: L9
 2981 14850 :AutoInstall: zencoding.vim
+1066 7618 :AutoInstall: cecutil.vim
