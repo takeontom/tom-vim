@@ -56,7 +56,6 @@ set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 set incsearch             " highlight search matches when typing search
 set laststatus=2          " always show the status line
-set hlsearch              " highlight search results
 set ignorecase            " case insensitive by default
 set infercase             " case inferred by default
 set smartcase             " if there are caps, go case-sensitive
@@ -111,6 +110,8 @@ set guioptions-=l  "remove left-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=b  "remove bottom scroll bar
 set guioptions-=B  "remove bottom scroll bar
+
+set mouse-=a       " disable mouse integration
 
 
 
