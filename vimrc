@@ -110,6 +110,8 @@ set guioptions-=l  "remove left-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=b  "remove bottom scroll bar
 set guioptions-=B  "remove bottom scroll bar
+set guioptions-=e  "remove tab list
+set guioptions-=c  "use console prompts instead of silly popups
 
 set mouse-=a       " disable mouse integration
 
