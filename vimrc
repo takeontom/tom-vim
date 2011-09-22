@@ -145,7 +145,7 @@ set ofu=syntaxcomplete#Complete " use default omni completion. override per ft.
 " ------------------------------------------------------------------------------
 
 " search for tags in the current directory, then work up if no match found
-"set tags=./tags;/
+set tags=./tags;/
 
 
 
