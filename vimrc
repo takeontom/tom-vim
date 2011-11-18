@@ -268,4 +268,4 @@ nmap <Leader>gf :Gvsplit<CR>
 " ------------------------------------------------------------------------------
 
 " insert the name (without path) of the current file
-inoremap <C-I>if <C-R>=expand("%:t")<CR>
+"inoremap <C-I>if <C-R>=expand("%:t")<CR>
