@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install ruby ruby-dev
+sudo apt-get install make ruby ruby-dev
 
 vim -c ":so%" command-t-1.0.vba
 

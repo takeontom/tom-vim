@@ -12,7 +12,7 @@ setlocal tw=78 ts=4 sw=4 sta et sts=4 ai
 let python_highlight_all = 1
 
 " Smart indenting
-setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+setlocal nosmartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
 setlocal omnifunc=pythoncomplete#Complete
