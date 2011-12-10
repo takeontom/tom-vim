@@ -115,6 +115,7 @@ set guioptions-=c  "use console prompts instead of silly popups
 
 set mouse-=a       " disable mouse integration
 
+set guifont=Monospace\ 9
 
 
 " ------------------------------------------------------------------------------
