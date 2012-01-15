@@ -29,3 +29,17 @@ public function test_get$1() {
 }$0
 endsnippet
 
+snippet function "Add a PHP function" b
+/**
+ * ${4:comments}
+ */
+${1:public} function ${2:name}(${3:params}) {
+    $0
+}
+endsnippet
+
+snippet foreach "A PHP foreach" b
+foreach(${1:collection} as${2: $${3:key}} $${4:value}) {
+    $0
+}
+endsnippet
