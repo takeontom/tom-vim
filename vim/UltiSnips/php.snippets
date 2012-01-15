@@ -1,0 +1,31 @@
+snippet getset "get and set methods" b
+/**
+ * $3
+ * @param ${2:type}$${1/.*/\l$0/}
+ */
+public function set$1(${2/(string |integer )/(?1:)/}$${1/.*/\l$0/}) {
+    $this->_${1/.*/\l$0/} = $${1/.*/\l$0/};
+}
+
+/**
+ * $4
+ * @return ${2/(\w*).*/$1/}
+ */
+public function get$1() {
+    return $this->_${1/.*/\l$0/};
+}$0
+endsnippet
+
+snippet tgetset "test methods for get and set methods" b
+public function test_set$1() {
+    $v = $2;
+    $this->_target->set$1($v);
+    $this->assertEquals($v, $this->_target->get$1());
+}
+
+public function test_get$1() {
+    // test for set$1 is enough
+    $this->test_set$1();
+}$0
+endsnippet
+
