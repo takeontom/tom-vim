@@ -56,6 +56,7 @@ set t_Co=256
 "colorscheme zenburn
 colorscheme tom_jellybeans
 set cursorline            " highlight current line
+set cursorcolumn          " highlight current column
 set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 
