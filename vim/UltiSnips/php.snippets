@@ -16,6 +16,33 @@ public function get$1() {
 }$0
 endsnippet
 
+snippet addgetset "add, get and set methods" b
+/**
+ * $4
+ * @param ${2:type}$${1/.*/\l$0/}
+ */
+public function add$1(${2/(string |integer )/(?1:)/}$${1/.*/\l$0/}) {
+    $this->_${3:${1/.*/\l$0s/}}[] = $${1/.*/\l$0/};
+}
+
+/**
+ * $5
+ * @param array ${1/.*/\l$0/}
+ */
+public function set${3:$1s}(array $${1/.*/\l$0/}) {
+    $this->_${3:${1/.*/\l$0s/}} = $${1/.*/\l$0/};
+}
+
+/**
+ * $6
+ * @return array
+ */
+public function get$3() {
+    return $this->_${3:${1/.*/\l$0s/}};
+}$0
+
+endsnippet
+
 snippet tgetset "test methods for get and set methods" b
 public function test_set$1() {
     $v = $2;
@@ -29,7 +56,42 @@ public function test_get$1() {
 }$0
 endsnippet
 
-snippet function "Add a PHP function" b
+snippet taddgetset "test methods for add, get and set methods" b
+public function test_add$1() {
+    $items = array();
+    for ($i = 0; $i < 10; $i++) {
+        $item = $3;
+        $this->assertNotContains($item, $this->_target->get${2:$1s}());
+        $this->_target->add$1($item);
+        $items[] = $item;
+    }
+    $setItems = $this->_target->get$2();
+    foreach($items as $item) {
+        $this->assertContains($item, $setItems);
+    }
+}
+
+public function test_set$2() {
+    $items = array();
+    for ($i = 0; $i < 10; $i++) {
+        $item = array($i);
+        $this->assertNotContains($item, $this->_target->get$2());
+        $items[] = $item;
+    }
+    $this->_target->set$2($items);
+    $setItems = $this->_target->get$2();
+    foreach($items as $item) {
+        $this->assertContains($item, $setItems);
+    }
+}
+
+public function test_get$2() {
+    // test for set$2 is enough
+    $this->test_set$2();
+}
+endsnippet
+
+snippet fun "Add a PHP function" !b
 /**
  * ${4:comments}
  */
@@ -38,8 +100,65 @@ ${1:public} function ${2:name}(${3:params}) {
 }
 endsnippet
 
+snippet tfun "Add a test PHP function" !b
+public function test_${1:name}_${2:extra}() {
+    $input = $3;
+    $expected = $4;
+    $actual = $this->_target->$1($0$input);
+    $this->assertEquals($expected, $actual);
+}
+endsnippet
+
 snippet foreach "A PHP foreach" b
 foreach(${1:collection} as${2: $${3:key}} $${4:value}) {
     $0
 }
+endsnippet
+
+snippet pclass "A protec class" b
+<?php
+/**
+ * @copyright Copyright (c) 2012, Protec Innovations Ltd
+ * @package ${2:package}
+ * @subpackage ${3:subpackage}
+ */
+
+/**
+ * $4
+ */
+class ${1:classname} {
+    $0
+}
+
+endsnippet
+
+snippet ptclass "A protec test class" b
+<?php
+/**
+ * @copyright Copyright (c) 2012, Protec Innovations Ltd
+ * @package ${2:package}
+ * @subpackage ${3:subpackage}
+ */
+
+class ${1:class}_Test extends PHPUnit_Framework_TestCase {
+    protected $_target;
+
+    public function setup() {
+        $this->_target = new $1();
+    }
+
+    $0
+}
+
+endsnippet
+
+snippet tthrown "test code to check an exception is thrown" !b
+$thrown = false;
+try {
+    $0
+}
+catch (${1:Exception} $e) {
+    $thrown = true;
+}
+$this->assertTrue($thrown, 'Expected $1 not thrown');
 endsnippet
