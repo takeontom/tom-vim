@@ -99,6 +99,9 @@ set scrolloff=3              " Give 3 lines of context when at bottom of window
 set nowrap                   " do not wrap line
 set nofoldenable             " really hate code-folding...
 
+set backspace=2              " let me backspace past insert
+set backspace=indent,eol,start " be able to backspace anything
+
 
 
 " ------------------------------------------------------------------------------
@@ -205,7 +208,6 @@ endfunction
 " ------------------------------------------------------------------------------
 
 if !exists("autocommands_loaded")
-    let autocommands_loaded = 1
 
     " arduino styling
     autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
@@ -245,21 +247,21 @@ let g:GetLatestVimScripts_allowautoinstall=1
 let g:CommandTMaxFiles=999999
 
 " Flush the CommandT buffer when saving new files
-let g:isNewFile = 0
-function! SetIsNewFile()
-    if ! filereadable(expand("<afile>:p"))
-        let g:isNewFile = 1
-    else
-        let g:isNewFile = 0
-    endif
-endfunction
-function! FlushCommandTOnNewFileSave()
-    if g:isNewFile == 1
-        CommandTFlush
-    endif
-endfunction
-autocmd BufWritePre * call SetIsNewFile()
-autocmd BufWritePost * call FlushCommandTOnNewFileSave()
+"let g:isNewFile = 0
+"function! SetIsNewFile()
+"    if ! filereadable(expand("<afile>:p"))
+"        let g:isNewFile = 1
+"    else
+"        let g:isNewFile = 0
+"    endif
+"endfunction
+"function! FlushCommandTOnNewFileSave()
+"    if g:isNewFile == 1
+"        CommandTFlush
+"    endif
+"endfunction
+"autocmd BufWritePre * call SetIsNewFile()
+"autocmd BufWritePost * call FlushCommandTOnNewFileSave()
 
 
 
