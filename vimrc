@@ -89,6 +89,9 @@ set scrolloff=3              " Give 3 lines of context when at bottom of window
 set nowrap                   " do not wrap line
 set nofoldenable             " really hate code-folding...
 
+set splitright               " vertical split to the right
+set splitbelow               " horizontal split to the right
+
 
 
 " ------------------------------------------------------------------------------
@@ -161,6 +164,8 @@ set ofu=syntaxcomplete#Complete " use default omni completion. override per ft.
 " search for tags in the current directory, then work up if no match found
 set tags=./tags;/
 
+" open tag in vertical split, centre on line
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
 
 
 " ------------------------------------------------------------------------------
