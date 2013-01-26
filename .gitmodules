@@ -28,3 +28,6 @@
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
 	url = git://github.com/xolox/vim-easytags.git
+[submodule "vim/bundle/php.vim--Garvin"]
+	path = vim/bundle/php.vim--Garvin
+	url = git://github.com/vim-scripts/php.vim--Garvin.git
