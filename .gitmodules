@@ -31,3 +31,6 @@
 [submodule "vim/bundle/php.vim--Garvin"]
 	path = vim/bundle/php.vim--Garvin
 	url = git://github.com/vim-scripts/php.vim--Garvin.git
+[submodule "lib/vim-pathogen"]
+	path = lib/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git

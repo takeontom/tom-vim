@@ -1,13 +1,12 @@
 #!/bin/bash
 
+sDir=$(cd $(dirname "$0"); pwd)
+echo "script found at:" $sDir
+cd $sDir
+
 git submodule update --init --recursive
 
 sudo apt-get install vim-gnome
-
-sDir=$(cd $(dirname "$0"); pwd)
-echo "script found at:" $sDir
-
-cd $sDir
 
 echo "installing ctags"
 sudo apt-get update
@@ -22,6 +21,14 @@ ln -f -s -T $sDir/vim ~/.vim
 ln -s -f $sDir/vimrc ~/.vimrc
 
 echo "vim config installed. huzzah!"
+
+echo "Installing pathogen..."
+if ! ln -f -s $sDir/lib/vim-pathogen/autoload/pathogen.vim $sDir/vim/autoload/pathogen.vim
+then
+    echo "Failed to install pathogen!"
+    exit 1
+fi
+echo "...installed pathogen"
 
 oldDir=$(pwd)
 cd $sDir/vim/bundle/command-t/ruby/command-t
