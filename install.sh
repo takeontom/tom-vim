@@ -1,9 +1,13 @@
 #!/bin/bash
 
+git submodule update --init --recursive
+
 sudo apt-get install vim-gnome
 
 sDir=$(cd $(dirname "$0"); pwd)
 echo "script found at:" $sDir
+
+cd $sDir
 
 echo "installing ctags"
 sudo apt-get update
