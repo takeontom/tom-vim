@@ -1,3 +1,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
+[submodule "lib/drupal_vimrc"]
+	path = lib/drupal_vimrc
+	url = git://drupalcode.org/project/vimrc.git
