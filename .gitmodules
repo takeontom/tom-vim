@@ -4,3 +4,6 @@
 [submodule "lib/drupal_vimrc"]
 	path = lib/drupal_vimrc
 	url = git://drupalcode.org/project/vimrc.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
