@@ -25,3 +25,6 @@
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "vim/bundle/easytags"]
+	path = vim/bundle/easytags
+	url = git://github.com/xolox/vim-easytags.git
