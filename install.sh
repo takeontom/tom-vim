@@ -24,8 +24,9 @@ ln -s -f $sDir/vimrc ~/.vimrc
 echo "vim config installed. huzzah!"
 
 oldDir=$(pwd)
-cd $sDir/lib/command-t
-./install-commant-t.sh
+cd $sDir/vim/bundle/command-t/ruby/command-t
+ruby extconf.rb
+make
 cd $oldDir
 
 echo "Installing drupal-vimrc..."
