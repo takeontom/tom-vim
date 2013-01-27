@@ -11,3 +11,4 @@ vim/GetLatest/Installed/*
 vim/bundle/vim-plugin-for-drupal
 vim/.vim
 vim/autoload/pathogen.vim
+vim/bundle

@@ -8,11 +8,47 @@
 
 
 " ------------------------------------------------------------------------------
-" Pathogen
+" Vundle
 " ------------------------------------------------------------------------------
 
-call pathogen#infect()
-call pathogen#helptags()
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+" Auto install Vundle. Credit:
+" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+"Add your bundles here
+
+" original repos on github
+Bundle 'mileszs/ack.vim.git'
+Bundle 'msanders/snipmate.vim.git'
+Bundle 'SirVer/ultisnips.git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround.git'
+Bundle 'wincent/Command-T'
+Bundle 'xolox/vim-easytags.git'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'php.vim--Garvin.git'
+Bundle 'taglist.vim.git'
+
+" non github repos
+Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
+
+filetype plugin indent on     " required!
 
 
 
