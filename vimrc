@@ -33,6 +33,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'mileszs/ack.vim.git'
 Bundle 'msanders/snipmate.vim.git'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround.git'
 Bundle 'wincent/Command-T'
@@ -229,6 +230,15 @@ function! ReloadSnippets( snippets_dir, ft )
     call GetSnippets( a:snippets_dir, filetype )
 endfunction
 
+
+
+" ------------------------------------------------------------------------------
+" Syntastic
+" ------------------------------------------------------------------------------
+
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_highlighting=1
+let g:syntastic_auto_loc_list=1
 
 
 " ------------------------------------------------------------------------------
