@@ -8,7 +8,7 @@ sudo apt-get install vim-gnome
 
 echo "installing ctags"
 sudo apt-get update
-sudo apt-get install ctags
+sudo apt-get install exuberant-ctags
 
 echo "backing up existing vim config..."
 mv ~/.vimrc ~/.vimrc.backup
