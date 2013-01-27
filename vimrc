@@ -119,6 +119,7 @@ set mouse-=a       " disable mouse integration
 set guifont=Monospace\ 9
 
 
+
 " ------------------------------------------------------------------------------
 " Command Mode
 " ------------------------------------------------------------------------------
@@ -155,6 +156,7 @@ set tags=./tags;/
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
 
 
+
 " ------------------------------------------------------------------------------
 " File Type Autocmds
 " ------------------------------------------------------------------------------
@@ -181,7 +183,6 @@ function! FixBadWhiteSpace()
     %s/\s*$//
     ''
 :endfunction
-
 
 
 
@@ -264,7 +265,6 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " Surround
     " ------------------------------------------------------------------------------
-
     Bundle 'tpope/vim-surround.git'
 
 
@@ -360,7 +360,6 @@ call vundle#rc()
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 
 
 
