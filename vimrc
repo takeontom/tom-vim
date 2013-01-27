@@ -1,56 +1,6 @@
 " Tom's VIM Config
 " tom@takeontom.com
 " https://github.com/takeontom/tom-vim
-"
-" comments taken from http://www.vi-improved.org/vimrc.php
-
-
-
-" ------------------------------------------------------------------------------
-" Vundle
-" ------------------------------------------------------------------------------
-
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-" Auto install Vundle. Credit:
-" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
-endif
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-"Add your bundles here
-
-" original repos on github
-Bundle 'mileszs/ack.vim.git'
-Bundle 'msanders/snipmate.vim.git'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround.git'
-Bundle 'wincent/Command-T'
-Bundle 'xolox/vim-easytags.git'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'ervandew/supertab'
-
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'php.vim--Garvin.git'
-Bundle 'taglist.vim.git'
-
-" non github repos
-Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
-
-filetype plugin indent on     " required!
-
 
 
 
@@ -95,7 +45,6 @@ set t_Co=256
 colorscheme tom_jellybeans
 set cursorline            " highlight current line
 set cursorcolumn          " highlight current column
-set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 
 
@@ -207,49 +156,6 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
 
 
 " ------------------------------------------------------------------------------
-" Taglist
-" ------------------------------------------------------------------------------
-
-" Toggle the taglist window
-nnoremap <silent> <F8> :TlistToggle<CR>
-
-
-" ------------------------------------------------------------------------------
-" EasyTags
-" ------------------------------------------------------------------------------
-
-set updatetime=4000     " l9 tries to set this to 10ms!
-
-
-
-" ------------------------------------------------------------------------------
-" SnipMate
-" ------------------------------------------------------------------------------
-
-" Reloads all the code snippets
-function! ReloadSnippets( snippets_dir, ft )
-    if strlen( a:ft ) == 0
-    let filetype = "_"
-    else
-    let filetype = a:ft
-    endif
-
-    call ResetSnippets()
-    call GetSnippets( a:snippets_dir, filetype )
-endfunction
-
-
-
-" ------------------------------------------------------------------------------
-" Syntastic
-" ------------------------------------------------------------------------------
-
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_highlighting=1
-let g:syntastic_auto_loc_list=1
-
-
-" ------------------------------------------------------------------------------
 " File Type Autocmds
 " ------------------------------------------------------------------------------
 
@@ -278,75 +184,195 @@ function! FixBadWhiteSpace()
 
 
 
-" ------------------------------------------------------------------------------
-" GetLatestVimScripts
-" ------------------------------------------------------------------------------
-
-let g:GetLatestVimScripts_allowautoinstall=1
-
-
 
 " ------------------------------------------------------------------------------
-" CommandT
+" Vundle Auto Install
 " ------------------------------------------------------------------------------
 
-" Don't really want any limit to the number of files CommandT shows...
-let g:CommandTMaxFiles=999999
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" Flush the CommandT buffer when saving new files
-let g:isNewFile = 0
-function! SetIsNewFile()
-    if ! filereadable(expand("<afile>:p"))
-        let g:isNewFile = 1
-    else
-        let g:isNewFile = 0
-    endif
-endfunction
-function! FlushCommandTOnNewFileSave()
-    if g:isNewFile == 1
-        CommandTFlush
-    endif
-endfunction
-autocmd BufWritePre * call SetIsNewFile()
-autocmd BufWritePost * call FlushCommandTOnNewFileSave()
+" Auto install Vundle. Credit:
+" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+
+    " ------------------------------------------------------------------------------
+    " Vundle
+    " ------------------------------------------------------------------------------
+    Bundle 'gmarik/vundle'
+
+
+    " ------------------------------------------------------------------------------
+    " Ack
+    " ------------------------------------------------------------------------------
+    Bundle 'mileszs/ack.vim.git'
+
+
+    " ------------------------------------------------------------------------------
+    " SnipMate
+    " ------------------------------------------------------------------------------
+    Bundle 'msanders/snipmate.vim.git'
+
+    " Reloads all the code snippets
+    function! ReloadSnippets( snippets_dir, ft )
+        if strlen( a:ft ) == 0
+        let filetype = "_"
+        else
+        let filetype = a:ft
+        endif
+
+        call ResetSnippets()
+        call GetSnippets( a:snippets_dir, filetype )
+    endfunction
+
+
+    " ------------------------------------------------------------------------------
+    " Syntastic
+    " ------------------------------------------------------------------------------
+    Bundle 'scrooloose/syntastic'
+
+    let g:syntastic_check_on_open=1
+    let g:syntastic_enable_highlighting=1
+    let g:syntastic_auto_loc_list=1
+
+
+    " ------------------------------------------------------------------------------
+    " Fugitive (git plugin)
+    " ------------------------------------------------------------------------------
+    Bundle 'tpope/vim-fugitive'
+
+    set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+    nmap <Leader>gs :Gstatus<CR>
+    nmap <Leader>gb :Gblame<CR>
+    nmap <Leader>gh :Gbrowse<CR>
+    nmap <Leader>gd :Gdiff<CR>
+    nmap <Leader>gf :Gvsplit<CR>
+
+
+    " ------------------------------------------------------------------------------
+    " Surround
+    " ------------------------------------------------------------------------------
+
+    Bundle 'tpope/vim-surround.git'
+
+
+    " ------------------------------------------------------------------------------
+    " CommandT
+    " ------------------------------------------------------------------------------
+    Bundle 'wincent/Command-T'
+
+    " Don't really want any limit to the number of files CommandT shows...
+    let g:CommandTMaxFiles=999999
+
+    " Flush the CommandT buffer when saving new files
+    let g:isNewFile = 0
+    function! SetIsNewFile()
+        if ! filereadable(expand("<afile>:p"))
+            let g:isNewFile = 1
+        else
+            let g:isNewFile = 0
+        endif
+    endfunction
+    function! FlushCommandTOnNewFileSave()
+        if g:isNewFile == 1
+            CommandTFlush
+        endif
+    endfunction
+    autocmd BufWritePre * call SetIsNewFile()
+    autocmd BufWritePost * call FlushCommandTOnNewFileSave()
+
+
+    " ------------------------------------------------------------------------------
+    " EasyTags
+    " ------------------------------------------------------------------------------
+    Bundle 'xolox/vim-easytags.git'
+
+    set updatetime=4000     " l9 tries to set this to 10ms!
+
+
+    " ------------------------------------------------------------------------------
+    " PHP Complete
+    " ------------------------------------------------------------------------------
+    Bundle 'shawncplus/phpcomplete.vim'
+
+
+    " ------------------------------------------------------------------------------
+    " SuperTab
+    " ------------------------------------------------------------------------------
+    Bundle 'ervandew/supertab'
+
+
+    " ------------------------------------------------------------------------------
+    " l9
+    " ------------------------------------------------------------------------------
+    Bundle 'L9'
+
+
+    " ------------------------------------------------------------------------------
+    " FuzzyFinder
+    " ------------------------------------------------------------------------------
+    Bundle 'FuzzyFinder'
+
+    nmap <Leader>ft :FufTag<CR>
+    nmap <Leader>ff :FufFile<CR>
+    nmap <Leader>fb :FufBuffer<CR>
+
+
+    " ------------------------------------------------------------------------------
+    " PHP5.3
+    " ------------------------------------------------------------------------------
+    Bundle 'php.vim--Garvin'
+
+
+    " ------------------------------------------------------------------------------
+    " Taglist
+    " ------------------------------------------------------------------------------
+    Bundle 'taglist.vim'
+
+    " Toggle the taglist window
+    nnoremap <silent> <F8> :TlistToggle<CR>
+
+
+    " ------------------------------------------------------------------------------
+    " Drupal VIM
+    " ------------------------------------------------------------------------------
+    Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
+
+
+    " ------------------------------------------------------------------------------
+    " UltiSnips
+    " ------------------------------------------------------------------------------
+    "Bundle 'SirVer/ultisnips'
+
+    let g:UltiSnipsEditSplit = "vertical"
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 
 
 
 " ------------------------------------------------------------------------------
-" FuzzyFinder
+" Install Vundle Bundles if 1st load
 " ------------------------------------------------------------------------------
 
-nmap <Leader>ft :FufTag<CR>
-nmap <Leader>ff :FufFile<CR>
-nmap <Leader>fb :FufBuffer<CR>
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
 
+filetype plugin indent on     " required!
 
-
-" ------------------------------------------------------------------------------
-" Fugitive (git plugin)
-" ------------------------------------------------------------------------------
-
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gb :Gblame<CR>
-nmap <Leader>gh :Gbrowse<CR>
-nmap <Leader>gd :Gdiff<CR>
-nmap <Leader>gf :Gvsplit<CR>
-
-
-
-" ------------------------------------------------------------------------------
-" UltiSnips
-" ------------------------------------------------------------------------------
-
-let g:UltiSnipsEditSplit = "vertical"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-
-" ------------------------------------------------------------------------------
-" Insert Bindings
-" ------------------------------------------------------------------------------
-
-" insert the name (without path) of the current file
-"inoremap <C-I>if <C-R>=expand("%:t")<CR>
