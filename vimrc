@@ -33,7 +33,6 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'mileszs/ack.vim.git'
 Bundle 'msanders/snipmate.vim.git'
-Bundle 'SirVer/ultisnips.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround.git'
 Bundle 'wincent/Command-T'
