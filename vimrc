@@ -38,6 +38,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround.git'
 Bundle 'wincent/Command-T'
 Bundle 'xolox/vim-easytags.git'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'ervandew/supertab'
 
 " vim-scripts repos
 Bundle 'L9'
