@@ -253,8 +253,6 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     Bundle 'tpope/vim-fugitive'
 
-    set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
     nmap <Leader>gs :Gstatus<CR>
     nmap <Leader>gb :Gblame<CR>
     nmap <Leader>gh :Gbrowse<CR>
@@ -380,5 +378,21 @@ if iCanHazVundle == 0
     :BundleInstall
 endif
 
-filetype plugin indent on     " required!
+filetype plugin indent on       " required!
+
+
+
+" ------------------------------------------------------------------------------
+" Status Line
+" ------------------------------------------------------------------------------
+
+set statusline=%<                   " truncate from start
+set statusline+=%f                  " file path
+set statusline+=\ %h                " help buffer flag
+set statusline+=%m                  " modified flag
+set statusline+=%r                  " readonly flag
+set statusline+=\ %{fugitive#statusline()}  " fugutive git branch, etc.
+set statusline+=%=                  " start right
+set statusline+=%-14.(%l,%c%V%)     " line, column, virtual column number
+set statusline+=\ %P                " percentage through file
 
