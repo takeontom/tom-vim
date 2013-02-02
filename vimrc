@@ -343,7 +343,7 @@ call vundle#rc()
     Bundle 'majutsushi/tagbar'
 
     " Toggle the tagbar window
-    nnoremap <silent> <F8> :TagBarToggle<CR>
+    nnoremap <silent> <F8> :TagbarToggle<CR>
 
 
     " ------------------------------------------------------------------------------
