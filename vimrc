@@ -338,12 +338,12 @@ call vundle#rc()
 
 
     " ------------------------------------------------------------------------------
-    " Taglist
+    " Tagbar
     " ------------------------------------------------------------------------------
-    Bundle 'taglist.vim'
+    Bundle 'majutsushi/tagbar'
 
-    " Toggle the taglist window
-    nnoremap <silent> <F8> :TlistToggle<CR>
+    " Toggle the tagbar window
+    nnoremap <silent> <F8> :TagBarToggle<CR>
 
 
     " ------------------------------------------------------------------------------
