@@ -372,7 +372,7 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     Bundle 'joonty/vdebug'
     let g:vdebug_options= {
-                \    "break_on_open" : 0
+                \   "break_on_open" : 0
                 \}
 
 
