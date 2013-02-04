@@ -4,10 +4,19 @@ sDir=$(cd $(dirname "$0"); pwd)
 echo "script found at:" $sDir
 cd $sDir
 
-sudo apt-get install vim-gnome
+sudo apt-get update
+
+# only install gvim if we're in a gui environment
+if [ -z $DISPLAY ]
+then
+    sudo apt-get install vim-nox
+else
+    sudo apt-get install vim-gnome
+fi
+
+sudo apt-get install make
 
 echo "installing ctags"
-sudo apt-get update
 sudo apt-get install exuberant-ctags
 
 echo "backing up existing vim config..."
