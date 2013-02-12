@@ -153,7 +153,7 @@ set ofu=syntaxcomplete#Complete " use default omni completion. override per ft.
 set tags=./tags;/
 
 " open tag in vertical split, centre on line
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
+map <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
 
 
 
