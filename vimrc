@@ -348,6 +348,8 @@ call vundle#rc()
     " Drupal VIM
     " ------------------------------------------------------------------------------
     Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
+    let g:Drupal_dirs = {7: '~/Projects/drupal/7.19'}
+
 
 
     " ------------------------------------------------------------------------------
