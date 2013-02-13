@@ -37,10 +37,8 @@ mv ~/.vimrc ~/.vimrc.backup
 mv ~/.vim ~/.vim.backup
 
 echo "linking to new vim config..."
-ln -f -s -T $sDir/vim ~/.vim
-ln -s -f $sDir/vimrc ~/.vimrc
+ln -f -s -T $sDir ~/.vim
+ln -s -f $sDir/../vimrc ~/.vimrc
 
 echo "vim config installed. huzzah!"
 
-
-./update.sh

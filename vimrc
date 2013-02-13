@@ -19,8 +19,8 @@ syntax on                 " syntax highlighting
 
 set autoread                " reads the file if it changes in background
 set backup                  " make backup files
-set backupdir=~/.vim/backup " where to put backup files
-set directory=~/.vim/tmp    " directory to place swap files in
+set backupdir=/tmp          " where to put backup files
+set directory=/tmp          " directory to place swap files in
 
 
 
@@ -389,6 +389,7 @@ if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
     :BundleInstall
+    silent !~/.vim/post-update.sh
 endif
 
 filetype plugin indent on       " required!
