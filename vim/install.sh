@@ -24,7 +24,7 @@ do
         then
             sudo apt-get update
         fi
-        $updated=1
+        updated=1
         sudo apt-get install -y "$r"
         echo "...installed $r"
     else
