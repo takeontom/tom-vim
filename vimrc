@@ -387,8 +387,10 @@ map <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>zz
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
 
-    " arduino styling
     autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+    autocmd! BufNewFile,BufRead Berksfile setlocal ft=ruby
+    autocmd! BufNewFile,BufRead Cheffile setlocal ft=ruby
+    autocmd! BufNewFile,BufRead Vagrantfile setlocal ft=ruby
 endif
 
 
