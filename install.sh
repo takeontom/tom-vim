@@ -33,14 +33,14 @@ do
 done
 
 echo "backing up existing vim config..."
-mv ~/.vimrc ~/.vimrc.backup
-mv ~/.vim ~/.vim.backup
+mv $HOME/.vimrc $HOME/.vimrc.backup
+mv $HOME/.vim $HOME/.vim.backup
 
 echo "linking to new vim config..."
-ln -f -s -T $sDir/vim ~/.vim
-ln -s -f $sDir/vimrc ~/.vimrc
+ln -f -s -T $sDir/vim $HOME/.vim
+ln -s -f $sDir/vimrc $HOME/.vimrc
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 
 $sDir/update.sh
 
