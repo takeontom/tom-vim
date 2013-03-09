@@ -195,7 +195,7 @@ call vundle#rc()
     " Tomorrow Night Theme
     " ------------------------------------------------------------------------------
     Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-    colorscheme Tomorrow-Night-Bright
+    :silent! colorscheme Tomorrow-Night-Bright
 
 
 
@@ -208,7 +208,6 @@ if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
     :BundleInstall
-    silent !~/.vim/post-update.sh
 endif
 
 filetype plugin indent on       " required!
@@ -259,15 +258,17 @@ set cursorcolumn          " highlight current column
 " Status Line
 " ------------------------------------------------------------------------------
 
-set statusline=%<                   " truncate from start
-set statusline+=%f                  " file path
-set statusline+=\ %h                " help buffer flag
-set statusline+=%m                  " modified flag
-set statusline+=%r                  " readonly flag
-set statusline+=\ %{fugitive#statusline()}  " fugutive git branch, etc.
-set statusline+=%=                  " start right
-set statusline+=%-14.(%l,%c%V%)     " line, column, virtual column number
-set statusline+=\ %P                " percentage through file
+if exists('g:loaded_fugitive')
+    set statusline=%<                   " truncate from start
+    set statusline+=%f                  " file path
+    set statusline+=\ %h                " help buffer flag
+    set statusline+=%m                  " modified flag
+    set statusline+=%r                  " readonly flag
+    set statusline+=\ %{fugitive#statusline()}  " fugutive git branch, etc.
+    set statusline+=%=                  " start right
+    set statusline+=%-14.(%l,%c%V%)     " line, column, virtual column number
+    set statusline+=\ %P                " percentage through file
+endif
 
 
 
@@ -308,7 +309,7 @@ set splitbelow               " horizontal split to the right
 " Formatting
 " ------------------------------------------------------------------------------
 
-set formatoptions=tcorqa  " See help:fo-table
+set formatoptions=tcorq   " See help:fo-table
 
 set expandtab             " no real tabs please!
 set smartindent           " do smart autoindenting when starting a new line
