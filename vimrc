@@ -39,10 +39,6 @@ set showcmd               " show the command being typed
 
 set background=dark       " using a dark background
 set t_Co=256
-"colorscheme lucius
-"colorscheme jellybeans
-"colorscheme zenburn
-colorscheme tom_jellybeans
 set cursorline            " highlight current line
 set cursorcolumn          " highlight current column
 
@@ -378,6 +374,14 @@ call vundle#rc()
     let g:vdebug_options= {
                 \   "break_on_open" : 0
                 \}
+
+
+    " ------------------------------------------------------------------------------
+    " Tomorrow Night Theme
+    " ------------------------------------------------------------------------------
+    Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+    colorscheme Tomorrow-Night-Bright
+
 
 
 
