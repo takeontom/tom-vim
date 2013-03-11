@@ -35,6 +35,16 @@ call vundle#rc()
 
 
     " ------------------------------------------------------------------------------
+    " Tomorrow Night Theme
+    " ------------------------------------------------------------------------------
+    Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+    :silent! colorscheme Tomorrow-Night-Bright
+    syntax on                 " syntax highlighting
+    set background=dark       " using a dark background
+    set t_Co=256
+
+
+    " ------------------------------------------------------------------------------
     " Ack
     " ------------------------------------------------------------------------------
     Bundle 'mileszs/ack.vim.git'
@@ -192,13 +202,6 @@ call vundle#rc()
     hi DbgBreakPt term=reverse ctermfg=White ctermbg=25 gui=reverse
 
 
-    " ------------------------------------------------------------------------------
-    " Tomorrow Night Theme
-    " ------------------------------------------------------------------------------
-    Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-    :silent! colorscheme Tomorrow-Night-Bright
-
-
 
 
 " ------------------------------------------------------------------------------
@@ -220,7 +223,6 @@ filetype plugin indent on       " required!
 " ------------------------------------------------------------------------------
 
 set nocompatible          " Use vim features - ignore vi compatibility
-syntax on                 " syntax highlighting
 
 
 
@@ -248,8 +250,6 @@ set showcmd               " show the command being typed
 " Visuals
 " ------------------------------------------------------------------------------
 
-set background=dark       " using a dark background
-set t_Co=256
 set cursorline            " highlight current line
 set cursorcolumn          " highlight current column
 
