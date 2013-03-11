@@ -189,6 +189,7 @@ call vundle#rc()
     let g:vdebug_options= {
                 \   "break_on_open" : 0
                 \}
+    hi DbgBreakPt term=reverse ctermfg=White ctermbg=25 gui=reverse
 
 
     " ------------------------------------------------------------------------------
@@ -392,6 +393,7 @@ if !exists("autocommands_loaded")
     autocmd! BufNewFile,BufRead Berksfile setlocal ft=ruby
     autocmd! BufNewFile,BufRead Cheffile setlocal ft=ruby
     autocmd! BufNewFile,BufRead Vagrantfile setlocal ft=ruby
+    autocmd! BufNewFile,BufRead *.md setlocal fo+=at|setlocal tw=80|setlocal wrap
 endif
 
 
@@ -419,4 +421,3 @@ function! FixBadWhiteSpace()
 inoremap <C-space> <C-x><C-o>
 inoremap <null> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
-
