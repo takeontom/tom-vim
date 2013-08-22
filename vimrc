@@ -51,24 +51,6 @@ call vundle#rc()
 
 
     " ------------------------------------------------------------------------------
-    " SnipMate
-    " ------------------------------------------------------------------------------
-    Bundle 'msanders/snipmate.vim.git'
-
-    " Reloads all the code snippets
-    function! ReloadSnippets( snippets_dir, ft )
-        if strlen( a:ft ) == 0
-        let filetype = "_"
-        else
-        let filetype = a:ft
-        endif
-
-        call ResetSnippets()
-        call GetSnippets( a:snippets_dir, filetype )
-    endfunction
-
-
-    " ------------------------------------------------------------------------------
     " Syntastic
     " ------------------------------------------------------------------------------
     Bundle 'scrooloose/syntastic'
@@ -128,19 +110,12 @@ call vundle#rc()
     Bundle 'xolox/vim-misc.git'
 
 
-
     " ------------------------------------------------------------------------------
     " EasyTags
     " ------------------------------------------------------------------------------
     Bundle 'xolox/vim-easytags.git'
 
     set updatetime=4000     " l9 tries to set this to 10ms!
-
-
-    " ------------------------------------------------------------------------------
-    " PHP Complete
-    " ------------------------------------------------------------------------------
-    "Bundle 'shawncplus/phpcomplete.vim'
 
 
     " ------------------------------------------------------------------------------
@@ -166,12 +141,6 @@ call vundle#rc()
 
 
     " ------------------------------------------------------------------------------
-    " PHP5.3
-    " ------------------------------------------------------------------------------
-    Bundle 'php.vim--Garvin'
-
-
-    " ------------------------------------------------------------------------------
     " Tagbar
     " ------------------------------------------------------------------------------
     Bundle 'majutsushi/tagbar'
@@ -181,24 +150,13 @@ call vundle#rc()
 
 
     " ------------------------------------------------------------------------------
-    " UltiSnips
-    " ------------------------------------------------------------------------------
-    "Bundle 'SirVer/ultisnips'
-
-    let g:UltiSnipsEditSplit = "vertical"
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<tab>"
-    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-
-    " ------------------------------------------------------------------------------
     " Markdown
     " ------------------------------------------------------------------------------
     Bundle 'tpope/vim-markdown'
 
 
     " ------------------------------------------------------------------------------
-    " Conque
+    " Django template highlighting
     " ------------------------------------------------------------------------------
     Bundle 'django.vim'
 
@@ -257,8 +215,8 @@ set showcmd               " show the command being typed
 " Visuals
 " ------------------------------------------------------------------------------
 
-set cursorline            " highlight current line
-set cursorcolumn          " highlight current column
+"set cursorline            " highlight current line
+"set cursorcolumn          " highlight current column
 
 
 
@@ -418,13 +376,3 @@ function! FixBadWhiteSpace()
     %s/\s*$//
     ''
 :endfunction
-
-
-
-" ------------------------------------------------------------------------------
-" Auto Complete
-" ------------------------------------------------------------------------------
-
-inoremap <C-space> <C-x><C-o>
-inoremap <null> <C-x><C-o>
-inoremap <C-@> <C-x><C-o>
