@@ -216,7 +216,7 @@ set showcmd               " show the command being typed
 " Visuals
 " ------------------------------------------------------------------------------
 
-"set cursorline            " highlight current line
+set cursorline            " highlight current line
 "set cursorcolumn          " highlight current column
 
 
@@ -260,7 +260,7 @@ set matchtime=2              " how many tenths of a second to blink matching bra
 set list                     " we do what to show tabs, to ensure we get them out of my files
 set listchars=tab:>-,trail:~ " show tabs and trailing
 
-set number                   " turn on line numbers
+set nonumber                   " turn on line numbers
 set numberwidth=4            " We are good up to 99999 lines
 set scrolloff=3              " Give 3 lines of context when at bottom of window
 
