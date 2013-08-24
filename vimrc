@@ -165,7 +165,8 @@ call vundle#rc()
     " Jedi
     " ------------------------------------------------------------------------------
     Bundle 'davidhalter/jedi-vim'
-
+    let g:jedi#popup_on_dot = 0
+    let g:jedi#popup_select_first = 1
 
 
 
