@@ -79,30 +79,40 @@ call vundle#rc()
 
 
     " ------------------------------------------------------------------------------
+    " ctrlp
+    " ------------------------------------------------------------------------------
+    Bundle 'kien/ctrlp.vim'
+
+    nmap <Leader>t :CtrlP<CR>
+    let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_use_caching = 1
+
+
+    " ------------------------------------------------------------------------------
     " CommandT
     " ------------------------------------------------------------------------------
-    Bundle 'wincent/Command-T'
-
-    " Don't really want any limit to the number of files CommandT shows...
-    let g:CommandTMaxFiles=999999
-
-    " Flush the CommandT buffer when saving new files
-    let g:isNewFile = 0
-    function! SetIsNewFile()
-        if ! filereadable(expand("<afile>:p"))
-            let g:isNewFile = 1
-        else
-            let g:isNewFile = 0
-        endif
-    endfunction
-    function! FlushCommandTOnNewFileSave()
-        if g:isNewFile == 1
-            CommandTFlush
-        endif
-    endfunction
-    autocmd BufWritePre * call SetIsNewFile()
-    autocmd BufWritePost * call FlushCommandTOnNewFileSave()
-
+"    Bundle 'wincent/Command-T'
+"
+"    " Don't really want any limit to the number of files CommandT shows...
+"    let g:CommandTMaxFiles=999999
+"
+"    " Flush the CommandT buffer when saving new files
+"    let g:isNewFile = 0
+"    function! SetIsNewFile()
+"        if ! filereadable(expand("<afile>:p"))
+"            let g:isNewFile = 1
+"        else
+"            let g:isNewFile = 0
+"        endif
+"    endfunction
+"    function! FlushCommandTOnNewFileSave()
+"        if g:isNewFile == 1
+"            CommandTFlush
+"        endif
+"    endfunction
+"    autocmd BufWritePre * call SetIsNewFile()
+"    autocmd BufWritePost * call FlushCommandTOnNewFileSave()
+"
 
     " ------------------------------------------------------------------------------
     " vim-misc
