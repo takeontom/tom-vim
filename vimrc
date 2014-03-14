@@ -45,6 +45,13 @@ call vundle#rc()
 
 
     " ------------------------------------------------------------------------------
+    " Supertab
+    " ------------------------------------------------------------------------------
+    Bundle 'ervandew/supertab'
+
+
+
+    " ------------------------------------------------------------------------------
     " Ack
     " ------------------------------------------------------------------------------
     Bundle 'mileszs/ack.vim.git'
@@ -86,6 +93,11 @@ call vundle#rc()
     nmap <Leader>t :CtrlP<CR>
     let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_use_caching = 1
+    let g:ctrlp_working_path_mode = ''
+    let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
+    let g:ctrlp_max_files = 1000000
+    let g:ctrlp_max_depth = 200
+    let g:ctrlp_switch_buffer = 'et'
 
 
     " ------------------------------------------------------------------------------
@@ -169,14 +181,6 @@ call vundle#rc()
     " Django template highlighting
     " ------------------------------------------------------------------------------
     Bundle 'django.vim'
-
-
-    " ------------------------------------------------------------------------------
-    " Jedi
-    " ------------------------------------------------------------------------------
-    Bundle 'davidhalter/jedi-vim'
-    let g:jedi#popup_on_dot = 0
-    let g:jedi#popup_select_first = 1
 
 
 
@@ -343,6 +347,16 @@ filetype plugin on
 " ------------------------------------------------------------------------------
 
 set ofu=syntaxcomplete#Complete " use default omni completion. override per ft.
+if has("gui_running")
+    " C-Space seems to work under gVim on both Linux and win32
+    inoremap <C-Space> <c-x><c-o>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-x><c-o>
+  else
+  " I have no idea of the name of Ctrl-Space elsewhere
+  endif
+endif
 
 
 
