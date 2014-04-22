@@ -31,13 +31,13 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " Vundle
     " ------------------------------------------------------------------------------
-    Bundle 'gmarik/vundle'
+    Plugin 'gmarik/vundle'
 
 
     " ------------------------------------------------------------------------------
     " Tomorrow Night Theme
     " ------------------------------------------------------------------------------
-    Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+    Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
     :silent! colorscheme Tomorrow-Night-Bright
     syntax on                 " syntax highlighting
     set background=dark       " using a dark background
@@ -47,20 +47,20 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " Supertab
     " ------------------------------------------------------------------------------
-    Bundle 'ervandew/supertab'
+    Plugin 'ervandew/supertab'
 
 
 
     " ------------------------------------------------------------------------------
     " Ack
     " ------------------------------------------------------------------------------
-    Bundle 'mileszs/ack.vim.git'
+    Plugin 'mileszs/ack.vim.git'
 
 
     " ------------------------------------------------------------------------------
     " Syntastic
     " ------------------------------------------------------------------------------
-    Bundle 'scrooloose/syntastic'
+    Plugin 'scrooloose/syntastic'
 
     let g:syntastic_check_on_open=1
     let g:syntastic_enable_highlighting=1
@@ -70,7 +70,7 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " Fugitive (git plugin)
     " ------------------------------------------------------------------------------
-    Bundle 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-fugitive'
 
     nmap <Leader>gs :Gstatus<CR>
     nmap <Leader>gb :Gblame<CR>
@@ -82,13 +82,13 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " Surround
     " ------------------------------------------------------------------------------
-    Bundle 'tpope/vim-surround.git'
+    Plugin 'tpope/vim-surround.git'
 
 
     " ------------------------------------------------------------------------------
     " ctrlp
     " ------------------------------------------------------------------------------
-    Bundle 'kien/ctrlp.vim'
+    Plugin 'kien/ctrlp.vim'
 
     nmap <Leader>t :CtrlP<CR>
     let g:ctrlp_cmd = 'CtrlP'
@@ -103,7 +103,7 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " CommandT
     " ------------------------------------------------------------------------------
-"    Bundle 'wincent/Command-T'
+"    Plugin 'wincent/Command-T'
 "
 "    " Don't really want any limit to the number of files CommandT shows...
 "    let g:CommandTMaxFiles=999999
@@ -129,13 +129,13 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " vim-misc
     " ------------------------------------------------------------------------------
-    Bundle 'xolox/vim-misc.git'
+    Plugin 'xolox/vim-misc.git'
 
 
     " ------------------------------------------------------------------------------
     " EasyTags
     " ------------------------------------------------------------------------------
-    Bundle 'xolox/vim-easytags.git'
+    Plugin 'xolox/vim-easytags.git'
 
     set updatetime=4000     " l9 tries to set this to 10ms!
 
@@ -143,19 +143,19 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " auto_mkdir
     " ------------------------------------------------------------------------------
-    Bundle 'auto_mkdir'
+    Plugin 'auto_mkdir'
 
 
     " ------------------------------------------------------------------------------
     " l9
     " ------------------------------------------------------------------------------
-    Bundle 'L9'
+    Plugin 'L9'
 
 
     " ------------------------------------------------------------------------------
     " FuzzyFinder
     " ------------------------------------------------------------------------------
-    Bundle 'FuzzyFinder'
+    Plugin 'FuzzyFinder'
 
     nmap <Leader>ft :FufTag<CR>
     nmap <Leader>ff :FufFile<CR>
@@ -165,7 +165,7 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " Tagbar
     " ------------------------------------------------------------------------------
-    Bundle 'majutsushi/tagbar'
+    Plugin 'majutsushi/tagbar'
 
     " Toggle the tagbar window
     nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -174,25 +174,25 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     " Markdown
     " ------------------------------------------------------------------------------
-    Bundle 'tpope/vim-markdown'
+    Plugin 'tpope/vim-markdown'
 
 
     " ------------------------------------------------------------------------------
     " Django template highlighting
     " ------------------------------------------------------------------------------
-    Bundle 'django.vim'
+    Plugin 'django.vim'
 
 
     " ------------------------------------------------------------------------------
     " Vim-Less
     " ------------------------------------------------------------------------------
-    Bundle 'groenewege/vim-less'
+    Plugin 'groenewege/vim-less'
 
 
     " ------------------------------------------------------------------------------
     " Vim CSS3 syntax
     " ------------------------------------------------------------------------------
-    Bundle 'hail2u/vim-css3-syntax'
+    Plugin 'hail2u/vim-css3-syntax'
 
 
 
