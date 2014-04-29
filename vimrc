@@ -55,6 +55,7 @@ call vundle#rc()
     " Ack
     " ------------------------------------------------------------------------------
     Plugin 'mileszs/ack.vim.git'
+    let g:ack_default_options = " -s -H --nocolor --nogroup --column --smart-case --follow"
 
 
     " ------------------------------------------------------------------------------
