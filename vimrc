@@ -40,7 +40,6 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
     :silent! colorscheme Tomorrow-Night-Bright
-    syntax on                 " syntax highlighting
     set background=dark       " using a dark background
     set t_Co=256
 
@@ -194,10 +193,6 @@ call vundle#rc()
     Plugin 'django.vim'
 
 
-    " ------------------------------------------------------------------------------
-    " Vim-Less
-    " ------------------------------------------------------------------------------
-    Plugin 'groenewege/vim-less'
 
 
     " ------------------------------------------------------------------------------
@@ -205,6 +200,10 @@ call vundle#rc()
     " ------------------------------------------------------------------------------
     Plugin 'hail2u/vim-css3-syntax'
 
+    " ------------------------------------------------------------------------------
+    " Vim-Less
+    " ------------------------------------------------------------------------------
+    Plugin 'groenewege/vim-less'
 
 
 " ------------------------------------------------------------------------------
@@ -324,6 +323,8 @@ set softtabstop=4         " when hitting tab or backspace, how many spaces
 set tabstop=4             " real tabs should be 8, and they will show with set list on
 set textwidth=0           " disable auto-wrapping by default. allow filetypes to overide
 set autoindent
+
+syntax on
 
 
 
